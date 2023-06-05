@@ -1,22 +1,21 @@
 sum = 0
-calc_int = 0
 
 while 1:
     com = input("コマンド入力 : add / min / mul / div / equal >> ")
-    if com == "add":
-        calc_int = input("数値の入力 >> ")
-        sum += float(calc_int)
-    elif com == "min":
-        calc_int = input("数値の入力 >> ")
-        sum -= float(calc_int)
-    elif com == "mul":
-        calc_int = input("数値の入力 >> ")
-        sum *= float(calc_int)
-    elif com == "div":
-        calc_int = input("数値の入力 >> ")
-        sum /= float(calc_int)
-    elif com == "equal":
+    calc_num = input("数値の入力 >> ")
+    if com == "equal":
         break
+    if calc_num.isdigit()==False:
+        print("入力値が数値ではありません")
+        continue
+    if com == "add":
+        sum += float(calc_num)
+    elif com == "min":
+        sum -= float(calc_num)
+    elif com == "mul":
+        sum *= float(calc_num)
+    elif com == "div":
+        sum /= float(calc_num)
     else:
         print("入力した値が違います。")
     print(round(sum, 1))
